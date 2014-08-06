@@ -1,0 +1,1 @@
+This is the skeleton from a former freelance project - take what you like from it!!!
