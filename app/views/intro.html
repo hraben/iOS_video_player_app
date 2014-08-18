@@ -1,0 +1,152 @@
+<ion-view>
+  <ion-nav-buttons side="left">
+    <button class="button button-positive button-clear no-animation intro-button"
+            ng-click="previous()" ng-if="slideIndex > 0">
+      {{ "INTRO-PREVIOUS" | translate }}
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-positive button-clear no-animation intro-button"
+            ng-click="next()" ng-if="slideIndex != 2">
+      {{ "INTRO-NEXT" | translate }}
+    </button>
+    <a class="button button-positive button-clear no-animation intro-button"
+       ng-click="startApp()" ng-if="slideIndex == 2">
+      Start
+    </a>
+  </ion-nav-buttons>
+
+  <ion-slide-box on-slide-changed="slideChanged(index)" class="slider-slide-intro">
+    <ion-slide>
+      <h3 class="intro-header">{{"INTRO-PLEASE-SELECT" | translate }}</h3>
+
+      <div class="row intro-content">
+        <div class="col col-16"></div>
+
+        <div class="col col-33">
+          <div class="list card positive" ng-click="clickFlag('de')">
+            <a class="item item-avatar language-card">
+              <img src="./content/icons/radio-waves.png">
+
+              <h2 class="dark">Deutsch</h2>
+
+              <p class="dark">Klicken um Sprache zu wählen</p>
+            </a>
+            <div ng-class="{'disabled-flag': language !== 'de'}" class="item item-image tutorial-item-img" ng-click="setLanguage('de')">
+              <img src="./content/icons/de.png">
+            </div>
+            <a ng-show="language === 'de'" class="item item-icon-left positive language-subcard" ng-click="setLanguage('de')">
+              <i class="icon ion-ios7-checkmark"></i>
+              <div class="language-card">Deutsch ausgewählt</div>
+            </a>
+            <a ng-show="language !== 'de'" class="item item-icon-left dark language-subcard" ng-click="setLanguage('de')">
+              <i class="icon ion-ios7-circle-outline"></i>
+              <div class="language-card">Deutsch auswählen</div>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="col col-33">
+          <div class="list card" ng-click="clickFlag('en')">
+            <a class="item item-avatar language-card">
+              <img src="./content/icons/radio-waves.png">
+
+              <h2 class="dark">English</h2>
+
+              <p class="dark">Click to select language</p>
+            </a>
+            <div ng-class="{'disabled-flag': language !== 'en'}" class="item item-image tutorial-item-img"
+                 ng-click="setLanguage('en')">
+              <img src="./content/icons/en.png">
+            </div>
+            <a ng-show="language === 'en'" class="item item-icon-left positive language-subcard"
+               ng-click="setLanguage('en')">
+              <i class="icon ion-ios7-checkmark"></i>
+
+              <div class="language-card">English selected</div>
+            </a>
+            <a ng-show="language !== 'en'" class="item item-icon-left dark language-subcard"
+               ng-click="setLanguage('en')">
+              <i class="icon ion-ios7-circle-outline"></i>
+
+              <div class="language-card">Select English</div>
+            </a>
+          </div>
+        </div>
+        <div class="col col-16"></div>
+      </div>
+      <div><img id="intro-swipe-png" src="./content/icons/swipe-left.png"/></div>
+      <h4 id="intro-swipe-text">{{'SWIPE-INTRO' | translate}}</h4>
+
+    </ion-slide>
+    <ion-slide>
+      <h3 class="intro-header">{{'FOLLOW-RULES' | translate}}</h3>
+
+      <div class="row intro-content rules">
+        <div class="col col-33">
+          <i class="icon ion-ios7-home rule-icon"></i>
+          <h4 class="rule-text">{{'RULE-1' | translate}}</h4>
+        </div>
+
+        <div class="col col-33">
+          <i class="icon ion-headphone rule-icon"></i>
+          <h4 class="rule-text">{{'RULE-2' | translate}}</h4>
+        </div>
+
+        <div class="col col-33">
+          <i class="icon ion-ipad rule-icon"></i>
+          <h4 class="rule-text">{{'RULE-3' | translate}}</h4>
+        </div>
+      </div>
+
+    </ion-slide>
+    <ion-slide>
+      <h3 class="intro-header">{{ 'TITLE-INTRODUCTION_VIDEO' | translate }}</h3>
+
+      <div class="row">
+        <div class="col col-50 col-offset-25">
+          <div class="list card main-card">
+
+            <div class="item item-image detail-main-img" ng-click="openWelcomeVideo()">
+              <img ng-src="./content/videos/intros/intro_{{language}}.png">
+              <img class="absolute-center chat-play-button" src="./content/icons/play-button.png">
+            </div>
+
+
+            <div class="item item-body positive language-card">
+              <div ng-click="openVideo('chat', chat.id)">{{'TEXT-INTRODUCTION-VIDEO' | translate}}
+              </div>
+
+              <div class="row detail-main time">
+                <i class="col col-icon icon ion-ios7-clock-outline"></i>
+                <div class="col big-icon-text">
+                  3:05 min.
+                </div>
+              </div>
+              <div class="row detail-main person">
+                <i class="col col-icon icon ion-ios7-person-outline"></i>
+
+                <div class="col big-icon-text">{{'ACTOR-INTRO' | translate }}</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col col-25 intro-content">
+          <img id="intro-arrow-img" src="./content/icons/left-arrow.png"/>
+          <h4 id="intro-arrow-text">{{ "HELP-INTRO" | translate }}</h4>
+        </div>
+      </div>
+
+      <button ng-show="introSeen === true" class="button button-positive next-intro-button" ng-click="startApp()">
+        {{"START-APP" | translate }}
+      </button>
+      <button ng-hide="introSeen === true" class="button button-stable next-intro-button" ng-click="startApp()">
+        {{"START-APP-WITHOUT-INTRO" | translate }}
+      </button>
+
+
+    </ion-slide>
+  </ion-slide-box>
+</ion-view>

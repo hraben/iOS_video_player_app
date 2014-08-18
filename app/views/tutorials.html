@@ -1,0 +1,274 @@
+<ion-view>
+<ion-content>
+  <div class="tutorials row" >
+    <div ng-repeat="tutorial in tutorials | filter: {group: 1}" class="col col-33">
+      <div class="list card">
+        <div class="item item-avatar phase-1">
+          <img src="./content/icons/book.png">
+
+          <h2>{{'TITLE-TUT-'+ tutorial.id | translate}}</h2>
+
+          <p>Amplius Tutorial</p>
+        </div>
+        <div id="recommended-tutorial" class="item item-image tutorial-item-img" ng-click="openVideo('tutorial', tutorial.id)">
+          <img ng-src="./content/videos/tutorials/{{ tutorial.id }}.png">
+          <img class="absolute-center tutorial-play-button" src="./content/icons/play-button.png">
+        </div>
+        <div class="item item-body positive">
+          <!--<div ng-click="openVideo('tutorial', tutorial.id)">-->
+            {{'TEXT-TUT-' + tutorial.id | translate}}
+          <!--</div>-->
+
+          <div class="row detail-main time">
+            <i class="col col-icon icon ion-ios7-clock-outline"></i>
+            <div class="col big-icon-text">{{tutorial.duration}} min.</div>
+          </div>
+          <div class="row detail-main person">
+            <i class="col col-icon icon ion-ios7-person-outline"></i>
+            <div class="col big-icon-text">{{'ACTORS-TUT-' + tutorial.id | translate }}</div>
+          </div>
+
+          <div ng-show="tutorial._watched === true" class="row detail-main person seen">
+            <i class="col col-icon icon ion-ios7-checkmark"></i>
+            <div class="col big-icon-text">{{'TUTORIAL-SEEN' | translate }}</div>
+          </div>
+          <div ng-hide="tutorial._watched === true" class="row detail-main person">
+            <i class="col col-icon icon ion-ios7-circle-outline"></i>
+            <div class="col big-icon-text">{{'TUTORIAL-NOT-SEEN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tutorials row">
+    <div ng-repeat="tutorial in tutorials | filter: {group: 2}" class="col col-33">
+      <div class="list card">
+        <div class="item item-avatar phase-1">
+          <img src="./content/icons/book.png">
+
+          <h2>{{'TITLE-TUT-'+ tutorial.id | translate}}</h2>
+
+          <p>Amplius Tutorial</p>
+        </div>
+        <div id="recommended-tutorial" class="item item-image tutorial-item-img"
+             ng-click="openVideo('tutorial', tutorial.id)">
+          <img ng-src="./content/videos/tutorials/{{ tutorial.id }}.png">
+          <img class="absolute-center tutorial-play-button" src="./content/icons/play-button.png">
+        </div>
+        <div class="item item-body positive">
+          <!--<div ng-click="openVideo('tutorial', tutorial.id)">-->
+            {{'TEXT-TUT-' + tutorial.id | translate}}
+          <!--</div>-->
+
+          <div class="row detail-main time">
+            <i class="col col-icon icon ion-ios7-clock-outline"></i>
+
+            <div class="col big-icon-text">{{tutorial.duration}} min.</div>
+          </div>
+          <div class="row detail-main person">
+            <i class="col col-icon icon ion-ios7-person-outline"></i>
+
+            <div class="col big-icon-text">{{'ACTORS-TUT-' + tutorial.id | translate }}</div>
+          </div>
+
+          <div ng-show="tutorial._watched === true" class="row detail-main person seen">
+            <i class="col col-icon icon ion-ios7-checkmark"></i>
+
+            <div class="col big-icon-text">{{'TUTORIAL-SEEN' | translate }}</div>
+          </div>
+          <div ng-hide="tutorial._watched === true" class="row detail-main person">
+            <i class="col col-icon icon ion-ios7-circle-outline"></i>
+
+            <div class="col big-icon-text">{{'TUTORIAL-NOT-SEEN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tutorials row">
+    <div ng-repeat="tutorial in tutorials | filter: {group: 3}" class="col col-33">
+      <div class="list card">
+        <div class="item item-avatar phase-1">
+          <img src="./content/icons/book.png">
+
+          <h2>{{'TITLE-TUT-'+ tutorial.id | translate}}</h2>
+
+          <p>Amplius Tutorial</p>
+        </div>
+        <div id="recommended-tutorial" class="item item-image tutorial-item-img"
+             ng-click="openVideo('tutorial', tutorial.id)">
+          <img ng-src="./content/videos/tutorials/{{ tutorial.id }}.png">
+          <img class="absolute-center tutorial-play-button" src="./content/icons/play-button.png">
+        </div>
+        <div class="item item-body positive">
+          <!--<div ng-click="openVideo('tutorial', tutorial.id)">-->
+            {{'TEXT-TUT-' + tutorial.id | translate}}
+          <!--</div>-->
+
+          <div class="row detail-main time">
+            <i class="col col-icon icon ion-ios7-clock-outline"></i>
+
+            <div class="col big-icon-text">{{tutorial.duration}} min.</div>
+          </div>
+          <div class="row detail-main person">
+            <i class="col col-icon icon ion-ios7-person-outline"></i>
+
+            <div class="col big-icon-text">{{'ACTORS-TUT-' + tutorial.id | translate }}</div>
+          </div>
+
+          <div ng-show="tutorial._watched === true" class="row detail-main person seen">
+            <i class="col col-icon icon ion-ios7-checkmark"></i>
+
+            <div class="col big-icon-text">{{'TUTORIAL-SEEN' | translate }}</div>
+          </div>
+          <div ng-hide="tutorial._watched === true" class="row detail-main person">
+            <i class="col col-icon icon ion-ios7-circle-outline"></i>
+
+            <div class="col big-icon-text">{{'TUTORIAL-NOT-SEEN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tutorials row">
+    <div ng-repeat="tutorial in tutorials | filter: {group: 4}" class="col col-33">
+      <div class="list card">
+        <div class="item item-avatar phase-1">
+          <img src="./content/icons/book.png">
+
+          <h2>{{'TITLE-TUT-'+ tutorial.id | translate}}</h2>
+
+          <p>Amplius Tutorial</p>
+        </div>
+        <div id="recommended-tutorial" class="item item-image tutorial-item-img"
+             ng-click="openVideo('tutorial', tutorial.id)">
+          <img ng-src="./content/videos/tutorials/{{ tutorial.id }}.png">
+          <img class="absolute-center tutorial-play-button" src="./content/icons/play-button.png">
+        </div>
+        <div class="item item-body positive">
+          <!--<div ng-click="openVideo('tutorial', tutorial.id)">-->
+            {{'TEXT-TUT-' + tutorial.id | translate}}
+          <!--</div>-->
+
+          <div class="row detail-main time">
+            <i class="col col-icon icon ion-ios7-clock-outline"></i>
+
+            <div class="col big-icon-text">{{tutorial.duration}} min.</div>
+          </div>
+          <div class="row detail-main person">
+            <i class="col col-icon icon ion-ios7-person-outline"></i>
+
+            <div class="col big-icon-text">{{'ACTORS-TUT-' + tutorial.id | translate }}</div>
+          </div>
+
+          <div ng-show="tutorial._watched === true" class="row detail-main person seen">
+            <i class="col col-icon icon ion-ios7-checkmark"></i>
+
+            <div class="col big-icon-text">{{'TUTORIAL-SEEN' | translate }}</div>
+          </div>
+          <div ng-hide="tutorial._watched === true" class="row detail-main person">
+            <i class="col col-icon icon ion-ios7-circle-outline"></i>
+
+            <div class="col big-icon-text">{{'TUTORIAL-NOT-SEEN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tutorials row">
+    <div ng-repeat="tutorial in tutorials | filter: {group: 5}" class="col col-33">
+      <div class="list card">
+        <div class="item item-avatar phase-1">
+          <img src="./content/icons/book.png">
+
+          <h2>{{'TITLE-TUT-'+ tutorial.id | translate}}</h2>
+
+          <p>Amplius Tutorial</p>
+        </div>
+        <div id="recommended-tutorial" class="item item-image tutorial-item-img"
+             ng-click="openVideo('tutorial', tutorial.id)">
+          <img ng-src="./content/videos/tutorials/{{ tutorial.id }}.png">
+          <img class="absolute-center tutorial-play-button" src="./content/icons/play-button.png">
+        </div>
+        <div class="item item-body positive">
+          <!--<div ng-click="openVideo('tutorial', tutorial.id)">-->
+            {{'TEXT-TUT-' + tutorial.id | translate}}
+          <!--</div>-->
+
+          <div class="row detail-main time">
+            <i class="col col-icon icon ion-ios7-clock-outline"></i>
+
+            <div class="col big-icon-text">{{tutorial.duration}} min.</div>
+          </div>
+          <div class="row detail-main person">
+            <i class="col col-icon icon ion-ios7-person-outline"></i>
+
+            <div class="col big-icon-text">{{'ACTORS-TUT-' + tutorial.id | translate }}</div>
+          </div>
+
+          <div ng-show="tutorial._watched === true" class="row detail-main person seen">
+            <i class="col col-icon icon ion-ios7-checkmark"></i>
+
+            <div class="col big-icon-text">{{'TUTORIAL-SEEN' | translate }}</div>
+          </div>
+          <div ng-hide="tutorial._watched === true" class="row detail-main person">
+            <i class="col col-icon icon ion-ios7-circle-outline"></i>
+
+            <div class="col big-icon-text">{{'TUTORIAL-NOT-SEEN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-show="language === 'de'" class="tutorials row">
+    <div ng-repeat="tutorial in tutorials | filter: {group: 6}" class="col col-33">
+      <div class="list card">
+        <div class="item item-avatar phase-1">
+          <img src="./content/icons/book.png">
+
+          <h2>{{'TITLE-TUT-'+ tutorial.id | translate}}</h2>
+
+          <p>Amplius Tutorial</p>
+        </div>
+        <div id="recommended-tutorial" class="item item-image tutorial-item-img"
+             ng-click="openVideo('tutorial', tutorial.id)">
+          <img ng-src="./content/videos/tutorials/{{ tutorial.id }}.png">
+          <img class="absolute-center tutorial-play-button" src="./content/icons/play-button.png">
+        </div>
+        <div class="item item-body positive">
+          <!--<div ng-click="openVideo('tutorial', tutorial.id)">-->
+            {{'TEXT-TUT-' + tutorial.id | translate}}
+          <!--</div>-->
+
+          <div class="row detail-main time">
+            <i class="col col-icon icon ion-ios7-clock-outline"></i>
+
+            <div class="col big-icon-text">{{tutorial.duration}} min.</div>
+          </div>
+          <div class="row detail-main person">
+            <i class="col col-icon icon ion-ios7-person-outline"></i>
+
+            <div class="col big-icon-text">{{'ACTORS-TUT-' + tutorial.id | translate }}</div>
+          </div>
+
+          <div ng-show="tutorial._watched === true" class="row detail-main person seen">
+            <i class="col col-icon icon ion-ios7-checkmark"></i>
+
+            <div class="col big-icon-text">{{'TUTORIAL-SEEN' | translate }}</div>
+          </div>
+          <div ng-hide="tutorial._watched === true" class="row detail-main person">
+            <i class="col col-icon icon ion-ios7-circle-outline"></i>
+
+            <div class="col big-icon-text">{{'TUTORIAL-NOT-SEEN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+</ion-view>

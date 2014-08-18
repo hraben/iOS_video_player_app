@@ -9,4 +9,3 @@ bower_components
 Thumbs.db
 *.DS_Store
 /www/
-/app/content/videos/*

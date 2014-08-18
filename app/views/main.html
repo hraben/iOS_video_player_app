@@ -1,0 +1,71 @@
+<!--Main content-->
+
+<ion-header-bar class="bar-default">
+  <div class="col col-50">
+    <button class="chats button button-outline button-energized button-wide"
+            ng-click="switchScreen('chats')"
+            ng-class="{'selected': screen == 'chats'}">Chats
+    </button>
+  </div>
+  <div class="col col-50">
+    <button class="tutorials button button-outline button-positive button-wide"
+            ng-click="switchScreen('tutorials')" ng-class="{'selected': screen == 'tutorials'}">Tutorials
+    </button>
+  </div>
+</ion-header-bar>
+
+<ion-nav-view></ion-nav-view>
+
+<!--Footer -->
+<ion-footer-bar class="bar bar-footer bar-positive">
+  <h1 class="h1 title">{{'APP-TITLE' | translate}}</h1>
+  <button class="button button-clear footer-button" ng-click="modal.show()">
+    <span id="footer-text">{{'SETTINGS' | translate}}</span>
+    <img id="footer-flag" ng-src="./content/icons/{{language}}.png">
+  </button>
+</ion-footer-bar>
+
+
+<!--Modal for resetting user and language change-->
+<script id="modal.html" type="text/ng-template">
+  <div class="language modal" ng-controller="ModalCtrl">
+    <ion-header-bar class="bar bar-header bar-positive">
+      <h1 class="title">{{'SETTINGS' | translate}}</h1>
+      <button class="button button-clear button-primary" ng-click="modal.hide()">{{'DONE' | translate}}</button>
+    </ion-header-bar>
+    <ion-content class="modal-content">
+      <div class="padding">
+        <h4 class="modal-text">{{'TEXT-CHOOSE-LANGUAGE' | translate}}</h4>
+
+        <button class="language button button-block button-stable" ng-class="{'selected': language == 'de'}" ng-click="clickFlag('de')">
+          <img class="modal-flag" src="./content/icons/de.png">
+          Deutsch</button>
+        <button class="language button button-block button-stable" ng-class="{'selected': language == 'en'}" ng-click="clickFlag('en')">
+          <img class="modal-flag" src="./content/icons/en.png">
+          English</button>
+        <br/>
+
+        <h4 ng-if="restartConfirmation === false" class="modal-text">{{'TEXT-START-AS-NEW-USER' | translate}}</h4>
+        <a ng-if="restartConfirmation === false" class="button button-block button-light"
+           ng-click="confirmRestart()">{{'BUTTON-START-AS-NEW-USER' |
+          translate}}</a>
+
+        <h4 class="modal-text" ng-if="restartConfirmation === true">{{'SURE'
+          | translate}} {{'TEXT-START-AS-NEW-USER' |
+          translate}}</h4>
+
+        <a ng-if="restartConfirmation === true" class="button button-block button-stable"
+           ng-click="cancelRestart()">{{'CANCEL' |
+          translate}}</a>
+        <a nav-clear ng-if="restartConfirmation === true" class="button button-block button-assertive"
+           ng-click="restartAsNewUser()">{{'BUTTON-START-AS-NEW-USER' |
+          translate}}</a>
+
+      </div>
+    </ion-content>
+    <ion-footer-bar class="bar bar-footer bar-positive">
+      <button class="button button-clear button-primary pull-right" ng-click="modal.hide()">{{'DONE' |
+        translate}}</button>
+    </ion-footer-bar>
+  </div>
+</script>

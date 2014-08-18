@@ -1,0 +1,115 @@
+<ion-view>
+  <div class="row row-days">
+    <div ng-repeat="chat in chats" class="col col-days">
+      <button class="button button-small button-energized button-block"
+              ng-class="{ 'day-button-active': selectedChatId === chat.id , 'button-outline': chat._watched === false }"
+              ng-click="slideToChat(chat.id)">{{'BAR-TITLE-' + chat.id |
+        translate}}
+      </button>
+    </div>
+  </div>
+
+  <ion-slide-box on-slide-changed="slideChanged(index)">
+
+    <ion-slide class="slider-slide-chats" ng-repeat="chat in chats">
+      <div class="row chats-row">
+
+        <div class="col col-50">
+          <div class="list card main-card">
+
+            <div class="item item-avatar">
+              <img src="./content/icons/chatbubble.png">
+
+              <h2>{{'TITLE-CHAT-' + chat.id | translate}} </h2>
+
+              <p>Amplius Chat ({{chat.id}}/11)</p>
+            </div>
+
+            <div id="main-chat" class="item item-image detail-main-img" ng-click="openVideo('chat', chat.id)">
+              <img ng-src="./content/videos/chats/{{ chat.id }}.png">
+              <img class="absolute-center chat-play-button" src="./content/icons/play-button.png">
+            </div>
+
+            <div class="item item-body positive">
+              <!--<div ng-click="openVideo('chat', chat.id)">-->
+                {{'TEXT-CHAT-' + chat.id | translate}}
+              <!--</div>-->
+
+              <div class="row detail-main time">
+                <i class="col col-icon icon ion-ios7-clock-outline"></i>
+                <div class="col big-icon-text">{{selectedChat().duration}} min.</div>
+              </div>
+              <div class="row detail-main person">
+                <i class="col col-icon icon ion-ios7-person-outline"></i>
+
+                <div class="col big-icon-text">{{'ACTOR-CHAT' | translate }}</div>
+              </div>
+            </div>
+
+            <div ng-show="chat._watched === true" class="item item-icon-left balanced">
+              <i class="icon ion-ios7-checkmark"></i>
+
+              <div> {{'CHAT-SEEN' | translate }}</div>
+            </div>
+
+            <div ng-hide="chat._watched === true" class="item item-icon-left dark">
+              <i class="icon ion-ios7-circle-outline"></i>
+
+              <div> {{'CHAT-NOT-SEEN' | translate }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-50" ng-if="chat.relatedTutorials">
+          <div class="list card main-card">
+
+            <div class="item item-avatar">
+              <img src="./content/icons/book.png">
+
+              <h2 translate="CARD-HEADER-TUT-RECOMMENDATION"></h2>
+
+              <p translate="CARD-HEADER-TUT-SUBTITLE-RECOMMENDATION"></p>
+            </div>
+
+            <div class="item item-body body-recommended-tutorials"
+                 ng-repeat="tutorial in tutorials | filter:{recommendedChat:chat.id}">
+
+              <div class="row no-container">
+                <div id="recommended-tutorial" class="col col-33" ng-click="openVideo('tutorial', tutorial.id)">
+                  <img class="full-image" ng-src="./content/videos/tutorials/{{ tutorial.id }}.png">
+                  <img class="overlay-play-button-recommendation" src="./content/icons/play-button.png">
+                </div>
+
+                <div class="col col-67">
+                  <p class="title-tutorials-recommended">{{ 'TITLE-TUT-' + tutorial.id | translate}}</p>
+
+                  <p class="text-tutorials-recommended">{{ 'TEXT-TUT-' + tutorial.id | translate}}</p>
+
+                  <div class="detail-main time small">
+                    <i class="icon ion-ios7-clock-outline big-icon"></i>
+                    <div class="small-icon-text">{{tutorial.duration}} min.</div>
+                  </div>
+                  <div class="detail-main person small">
+                    <i class="icon ion-ios7-person-outline"></i>
+                    <div class="small-icon-text">{{'ACTORS-TUT-' + tutorial.id | translate}}</div>
+                  </div>
+
+                  <div ng-show="tutorial._watched === true" class="detail-main person small seen">
+                    <i class="icon ion-ios7-checkmark"></i>
+                    <div class="small-icon-text">{{'TUTORIAL-SEEN' | translate }}</div>
+                  </div>
+                  <div ng-hide="tutorial._watched === true" class="detail-main person small">
+                    <i class="icon ion-ios7-circle-outline"></i>
+
+                    <div class="small-icon-text">{{'TUTORIAL-NOT-SEEN' | translate }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slide-box>
+
+</ion-view>

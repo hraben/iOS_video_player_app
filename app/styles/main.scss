@@ -1,0 +1,393 @@
+// bower:scss
+// endbower
+//Import not working yet
+
+@import 'ionic/ionic';
+
+
+body{
+  background-color: white;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+}
+
+ul.switch {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+
+  li {
+    background-color: #ccc;
+    display: inline-block;
+    font-size: 25px;
+    line-height: 38px;
+    text-align: center;
+    width: 49.7%;
+
+    &.selected {
+      background-color: white;
+      font-weight: 700;
+    }
+
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+}
+
+.button-wide {
+  width: 100%;
+  min-height: 60px !important;
+  font-size: 16px !important;
+}
+
+.modal-text {
+  text-align: center;
+}
+
+.main-card {
+  margin: 0px
+}
+
+.col-content {
+  padding: 0px !important;
+}
+
+.col-days {
+  padding-top: 0px;
+}
+
+.overlay-play-button-main {
+  position: absolute;
+  max-width: 150px;
+  width: auto;
+  height: auto;
+  display: block;
+  top: 60px;
+  left: 160px;
+  z-index: 100;
+}
+
+.overlay-play-button-recommendation {
+  position: absolute;
+  max-width: 40px;
+  width: auto;
+  height: auto;
+  display: block;
+  top: 35px;
+  left: 70px;
+  z-index: 100;
+}
+
+.overlay-play-button-tutorial {
+  position: absolute;
+  max-width: 86px;
+  width: auto;
+  height: auto;
+  display: block;
+  top: 45px;
+  left: 110px;
+  z-index: 100;
+}
+
+.img-tutorials-recommended {
+  width: 33%;
+  float: left;
+}
+
+.title-tutorials-recommended {
+  margin-top: -4px !important;
+  margin-bottom: 5px !important;
+  font-weight: bold;
+  color: black !important;
+}
+
+.text-tutorials-recommended {
+  margin-top: -4px !important;
+  margin-bottom: 5px !important;
+  font-size: 12px !important;
+}
+
+.body-recommended-tutorials {
+  padding: 5px;
+}
+
+.detail-main {
+  color: #666;
+  font-size: 14px;
+  padding-left: 0px;
+  padding-right: 0px
+}
+
+.small {
+  font-size: 12px;
+}
+
+.time {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.person {
+  margin: 0px;
+}
+
+.sub-card-tutorial {
+  padding: 10px 40px 5px 45px;
+}
+
+.has-header {
+  top: 95px !important;
+}
+
+.disabled-flag {
+  filter: opacity(.2)
+}
+
+
+//slider-testing
+
+.slider {
+  height: 100%;
+}
+
+.slider-slide-intro {
+  padding-top: 80px;
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+.slider-slide-chats {
+  padding-top: 0px !important;
+}
+
+#logo {
+  margin: 30px 0px;
+}
+
+#list {
+  width: 170px;
+  margin: 30px auto;
+  font-size: 20px;
+}
+
+#list ol {
+  margin-top: 30px;
+}
+
+#list ol li {
+  text-align: left;
+  list-style: decimal;
+  margin: 10px 0px;
+}
+
+.language.modal {
+  ion-content .padding .button.selected {
+    background-color: darkgrey !important;
+  }
+}
+
+ion-header-bar .col {
+  .chats.button.selected {
+    background-color: #F0B840 !important;
+    color: white;
+  }
+
+  .tutorials.button.selected {
+    background-color: #69c4da !important;
+    color: white;
+  }
+}
+
+.bar-default {
+  padding-top: 5px;
+}
+
+.item-avatar > img:first-child {
+  top: 21px;
+  left: 21px;
+  max-width: 28px;
+  max-height: 28px;
+}
+
+#footer-flag {
+  height: 21px;
+  margin-top: 6px;
+}
+
+.modal-flag {
+  height: 25px;
+  margin-top: 9px;
+  position: absolute;
+  left: 210px;
+}
+
+.language-card {
+  text-align: left !important;
+}
+
+.language-subcard {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.rule-icon {
+  font-size: 120px;
+}
+
+.rule-text {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.bar {
+  border: 0px !important;
+//  background: #ffffff !important;
+}
+
+.absolute-center {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.chat-play-button {
+  width: 20% !important;
+}
+
+.tutorial-play-button {
+  width: 20% !important;
+}
+
+.intro-content {
+  margin-top: 60px;
+}
+
+ion-slide .rules {
+  margin-top: 100px;
+}
+
+.footer-button {
+  top: 0;
+}
+
+#footer-text {
+  position: absolute;
+  right: 42px;
+}
+
+.day-button-active {
+  border-color: #6C3 !important;
+  background-color: #6C3 !important;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15) !important;
+  color: #ffffff !important;
+}
+
+.bar-header {
+  background-image: none !important;
+}
+
+.right-buttons {
+  padding-top: 25px !important;
+}
+
+.nav-bar {
+  padding-top: 25px !important;
+}
+
+.row-days {
+  padding-top: 100px;
+  padding-bottom: 0px;
+}
+
+.chats-row {
+  padding-top: 0px !important;
+}
+
+.modal-content {
+  top: 60px !important;
+}
+
+.next-intro-button {
+  margin-top: 40px
+}
+
+.seen {
+  color: #6C3 !important;
+}
+
+.intro-button {
+  font-size: 21px !important;
+}
+
+#main-chat.activated {
+  filter: opacity(.7) !important;
+}
+
+#recommended-tutorial.activated {
+  filter: opacity(.7) !important;
+}
+
+.big-icon-text {
+  display: inline;
+  padding: 0px;
+}
+
+.small-icon-text {
+  display: inline;
+  position: absolute;
+  left: 190px;
+}
+
+#intro-swipe-png {
+  margin-top: 40px;
+  max-height: 80px;
+  text-align: center;;
+}
+
+#intro-swipe-text {
+  margin-top: 0px;
+}
+
+.intro-header {
+  padding-top: 20px;
+}
+
+#intro-arrow-img {
+  position: absolute;
+  right: 183px;
+  top: 255px;
+  max-height: 80px;
+}
+
+#intro-arrow-text {
+  margin-top: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.col-icon {
+  max-width: 18px;
+  padding: 0px;
+}
+
+.item-body {
+  padding-bottom: 5px !important;
+}
